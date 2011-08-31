@@ -1,0 +1,42 @@
+<% title "Meals" %>
+  <div class="row">
+    <div class="span12 columns">
+      <div class="page-header">
+        <h1>Listing meals on <%= @date.strftime "%B %e, %Y" %></h1>
+      </div>
+      <% if @meals.empty? %>
+        <%= render :partial => "no_meal" %>
+      <% end %>
+    </div><!-- span  -->
+  </div> <!-- row -->
+
+  <div class="row">
+    <div class="span5 columns action">
+      <%= content_tag :div, "", :id=>"datepicker", :class=>"item", :type=>"text" %>
+      <%= content_tag :div, :class=>"item", :id=>"search_button" do %>
+        <%= form_tag meals_path, :remote => true, :method => 'get', :id=>"send_date" do %> 
+          <%= hidden_field_tag :selectedDate %>
+          <%= submit_tag "Search" %>
+        <% end %>
+      <% end %>
+    </div><!-- span  -->
+    <div class="span6 columns offset1">
+    <%= content_tag :div, :id=>"chart", :class=>"calChart" do %>
+      <%= render :partial => "chart" %>
+    <% end %>
+    </div><!-- span  -->
+  </div> <!-- row -->
+
+
+<!--  <div class="item evol">
+  	<div id="evolutionChart"></div>
+  </div>
+  -->
+
+  <% unless @meals.empty? %>
+    <hr/>
+    <%= content_tag :div, :id=>"meals_list" do %>
+      <%= render @meals %>
+    <% end %>
+  <% end %>
+

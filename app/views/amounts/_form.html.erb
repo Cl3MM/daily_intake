@@ -1,0 +1,27 @@
+<%= form_for(@amount) do |f| %>
+  <% if @amount.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@amount.errors.count, "error") %> prohibited this amount from being saved:</h2>
+
+      <ul>
+      <% @amount.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ingredientAmount %><br />
+    <%= f.text_field :ingredientAmount %>
+  </div>
+  <div class="field">
+	<%= select :amount, :meal_id, Meal.all.collect{|p| [p.name, p.id]}%>
+  </div>
+  <div class="field">
+	<%= select :amount, :ingredient_id, Ingredient.all.collect{|p| [p.name, p.id]}%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

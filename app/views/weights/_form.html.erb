@@ -1,0 +1,16 @@
+<%= form_for @weight do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </p>
+  <p>
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </p>
+  <p>
+    <%= f.label :bodyfat %><br />
+    <%= f.text_field :bodyfat %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

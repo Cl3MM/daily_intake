@@ -1,0 +1,23 @@
+<% title "Weights" %>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Weight</th>
+    <th>Date</th>
+    <th>Bodyfat</th>
+  </tr>
+  <% for weight in @weights %>
+    <tr>
+      <td><%= weight.user_id %></td>
+      <td><%= weight.weight %></td>
+      <td><%= weight.date %></td>
+      <td><%= weight.bodyfat %></td>
+      <td><%= link_to "Show", weight %></td>
+      <td><%= link_to "Edit", edit_weight_path(weight) %></td>
+      <td><%= link_to "Destroy", weight, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Weight", new_weight_path %></p>

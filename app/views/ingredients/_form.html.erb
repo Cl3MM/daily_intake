@@ -1,0 +1,51 @@
+<%= form_for(@ingredient) do |f| %>
+  <fieldset>
+  <%= f.error_messages %>
+
+  <div class="clearfix">
+    <%= f.label :name %>
+    <div class="input">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <div class="clearfix">
+    <%= f.label :description %>
+    <div class="input">
+      <%= f.text_field :description %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :brand %>
+    <div class="input">
+      <%= f.text_field :brand %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :category_id %>
+    <div class="input">
+      <%= f.text_field :category_id %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :protein %>
+    <div class="input">
+      <%= f.text_field :protein %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :carbs %>
+    <div class="input">
+      <%= f.text_field :carbs %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :fat %>
+    <div class="input">
+      <%= f.text_field :fat %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit "Done", :class => "btn primary"%>
+  </div>
+<% end %>

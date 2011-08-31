@@ -1,0 +1,24 @@
+<% title "Weight" %>
+
+<p>
+  <strong>User:</strong>
+  <%= @weight.user_id %>
+</p>
+<p>
+  <strong>Weight:</strong>
+  <%= @weight.weight %>
+</p>
+<p>
+  <strong>Date:</strong>
+  <%= @weight.date %>
+</p>
+<p>
+  <strong>Bodyfat:</strong>
+  <%= @weight.bodyfat %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_weight_path(@weight) %> |
+  <%= link_to "Destroy", @weight, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", weights_path %>
+</p>

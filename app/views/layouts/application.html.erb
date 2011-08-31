@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag :defaults, 'highcharts.js', 'js/themes/grid.js' %>
+    <%= stylesheet_link_tag "http://twitter.github.com/bootstrap/assets/css/bootstrap-1.1.1.min.css" %>
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+
+    <div id="menu">
+      <%= render :partial => "layouts/menu" %>
+    </div>
+
+    <div class="container">
+
+      <% if false -%>
+        <div class="row">
+          <div class="span4 columns">
+            Menu !
+          </div> <!-- span -->
+          <div class="span4 columns">
+      <% end -%>
+      <% flash.each do |name, msg| %>
+      <div class="row">
+        <span class="span12 columns offset2">
+          <%= content_tag :div, msg, :id => "flash_#{name}", :class => "alert-message #{"success" if name == :notice }" %>
+        </span>
+      </div>
+      <% end %>
+
+      <div class="row">
+        <span class="span12 columns offset2">
+          <%#= content_tag :h1, yield(:title) if show_title? %>
+          <%= yield %>
+        </span>
+      </div>
+
+      <% if false -%>
+          </div> <!-- span -->
+        </div> <!-- row -->
+      <% end -%>
+
+    </div><!-- container-fluid-->
+
+  </body>
+</html>

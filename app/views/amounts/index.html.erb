@@ -1,0 +1,27 @@
+<h1>Listing amounts</h1>
+
+<table>
+  <tr>
+    <th>Ingredientamount</th>
+    <th>Ingredient</th>
+    <th>Meal</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @amounts.each do |amount| %>
+  <tr>
+    <td><%= amount.ingredientAmount %></td>
+    <td><%= amount.ingredient_id %></td>
+    <td><%= amount.meal_id %></td>
+    <td><%= link_to 'Show', amount %></td>
+    <td><%= link_to 'Edit', edit_amount_path(amount) %></td>
+    <td><%= link_to 'Destroy', amount, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Amount', new_amount_path %>

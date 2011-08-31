@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  date: 2011-07-04
+  weight: 1.5
+  user_id: 1
+  maintenance: false
+
+two:
+  date: 2011-07-04
+  weight: 1.5
+  user_id: 1
+  maintenance: false

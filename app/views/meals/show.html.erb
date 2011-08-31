@@ -1,0 +1,50 @@
+<% title "#{@meal.name.capitalize} - #{@meal.time}" %>
+<div class="page-header">
+  <h1><%= @meal.name.capitalize %> <small> - <%= @meal.date.strftime("%A %B %d, %Y - %H:%M") %> - <%= (@meal.dayOn)?"ON":"OFF" %></small></h1>
+</div>
+
+<%= form_tag add_ingredient_meal_path do %>
+  <div class="well">
+    <%= select :amount, :ingredient_id, Ingredient.all.collect{|p| [p.name, p.id]}%>
+    <%= text_field_tag :ingredientAmount %>
+    <%= submit_tag "add", :class => "btn primary" %>
+  </div>
+<% end %>
+
+<% if @meal.ingredients.size > 0 %>
+<div id="meal">
+<table class="zebra-striped" id="sortTableExample">
+  <thead>
+    <tr>
+      <th class="header headerSortUp">#</th>
+      <th class="orange header">Ingredients</th>
+      <th class="blue header">Weight (grs.)</th>
+      <th class="green header right">kcal.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @meal.ingredients.each do |ing| %>
+    <tr>
+      <td><%= link_to "x", del_ingredient_path(ing), :confirm => "Are you sure you want to delete #{ing.name} from the database?" %></td>
+      <td><%= ing.name %></td>
+      <td><%= amount = @meal.amounts.find_by_ingredient_id(ing.id).ingredientAmount %>grs</td>
+      <td class="right"><%= ing.cal*amount/100 %></td>
+    </tr>
+  <% end%>
+  </tbody>
+</table>
+</div>
+
+<div class="actions">
+  <p class="right">Total: <%= @meal.totalCal %> kcal</p>
+</div>
+
+<% end %>
+
+
+<hr/>
+<%= link_to 'Edit', edit_meal_path(@meal) %> |
+
+<!-- # button_to 'Back', :controller=>"meals", :selectedDate=> @meal.date.strftime("%m/%d/%y"), :method=>"post" -->
+
+<%= link_to 'Back', meals_path %>

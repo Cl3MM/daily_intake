@@ -1,0 +1,46 @@
+<% title "Editing Ingredient" %>
+  <div class="row">
+    <div class="span12 columns">
+      <div class="page-header">
+        <h1><%= @ingredient.name %></h1>
+      </div>
+    </div><!-- span  -->
+  </div> <!-- row -->
+
+<p>
+  <b>Name:</b>
+  <%= @ingredient.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @ingredient.description %>
+</p>
+
+<p>
+  <b>Brand:</b>
+  <%= @ingredient.brand %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @ingredient.category_id %>
+</p>
+
+<p>
+  <b>Protein:</b>
+  <%= @ingredient.protein %>
+</p>
+
+<p>
+  <b>Carbs:</b>
+  <%= @ingredient.carbs %>
+</p>
+
+<p>
+  <b>Fat:</b>
+  <%= @ingredient.fat %>
+</p>
+
+<%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
+<%= link_to 'Back', ingredients_path %>

@@ -1,0 +1,55 @@
+<% title "Log in" %>
+<div class="page-header">
+  <h1>Signup</h1>
+</div>
+
+<%= form_for @user do |f| %>
+  <fieldset>
+  <%= f.error_messages %>
+  <div class="clearfix">
+    <%= f.label :username %>
+    <div class="input">
+      <%= f.text_field :username, :class => "xlarge" %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :email %>
+    <div class="input">
+      <%= f.text_field :email, :class => "xlarge" %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :dob %>
+    <div class="input">
+      <%= date_select("user", :dob, :class => "medium",
+                      :order => [:day, :month, :year],
+                      :start_year => 1930) %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :share_ingredient %>
+    <div class="input">
+      <ul class="inputs-list">
+        <li>
+          <label>
+            <%= f.check_box :share_ingredient %>
+            <span>Do you want to share your ingredients with everyone?</span>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :email %>
+    <div class="input">
+      <%= f.password_field :password, :class => "xlarge" %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :password_confirmation %>
+    <div class="input">
+      <%= f.password_field :password_confirmation, :class => "xlarge" %>
+    </div>
+  </div>
+  <div class="actions"><%= f.submit (@user.new_record? ? "Sign up" : "Update"), :class => "btn primary" %></div>
+<% end %>

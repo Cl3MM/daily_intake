@@ -1,0 +1,21 @@
+<% title "Ingredients - Bulk insert" %>
+<div class="page-header">
+  <h1>Add several ingredients</h1>
+</div>
+
+<%= form_tag import_ingredients_url, :method => 'post' do %>
+  <fieldset>
+    <div class="clearfix">
+      <label for="textarea">
+        Bulk insert
+      </label>
+      <div class="input">
+        <%= text_area_tag :content, '', :class => "xxlarge", :size => "3x13" %>
+        <span class"help-block">Copy/paste the elements in the textarea below, and press the buton.</span>
+      </div>
+    </div>
+    <div class="actions">
+      <%= submit_tag "Import !", :class => "btn primary" %>
+    </div>
+  </fieldset>
+<% end %>

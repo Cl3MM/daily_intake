@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  ingredientAmount: 1.5
+  ingredient_id: 1
+  meal_id: 1
+
+two:
+  ingredientAmount: 1.5
+  ingredient_id: 1
+  meal_id: 1

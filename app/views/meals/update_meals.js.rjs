@@ -1,0 +1,2 @@
+page.replace_html("meals_list", render @meal);
+alert("AJAAAXXX");

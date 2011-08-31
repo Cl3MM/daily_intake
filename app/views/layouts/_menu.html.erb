@@ -1,0 +1,41 @@
+<div class="topbar-wrapper" style="z-index: 5;">
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <h3><a href="#">daily#intake</a></h3>
+          <ul>
+            <li <%= ((controller.controller_name == "homes") ? h("class='active'") : h("")) %>><%= link_to "Home", homes_path %></li>
+            <% if logged_in? %>
+              <li><%= link_to "Add a meal", new_meal_path %></li>
+              <li><%= link_to "Manage ingredients", ingredients_path %></li>
+            <% else %>
+              <li> <a href="#">Take a tour</a> </li>
+            <% end %>
+          </ul>
+          <form action="">
+            <input type="text" placeholder="Search">
+          </form>
+          <% if logged_in? %>
+
+          <ul class="nav secondary-nav">
+            <li class="menu open">
+              <a href="#" class="menu"><%= current_user.username %></a>
+              <ul class="menu-dropdown">
+                <li><%= link_to "Edit profile", edit_current_user_path %></li>
+                <li><%= link_to "Log out", logout_path %></li>
+                <li class="divider"></li>
+                <li><a href="#">Another link</a></li>
+              </ul>
+            </li>
+          </ul>
+
+         <% else %>
+         <ul class="nav secondary-nav">
+           <li <%= ((controller.controller_name == "users") ? h("class='active'") : h('')) %>><%= link_to "Sign up", signup_path %></li>
+           <li <%= ((controller.controller_name == "user_sessions") ? h("class='active'") : h('')) %>><%= link_to "Open a session", login_path %></li>
+         </ul>
+        <% end %>
+        </div>
+      </div><!-- /fill -->
+    </div><!-- /topbar -->
+  </div>

@@ -1,0 +1,36 @@
+<% title "Ingredients" %>
+<div class="page-header">
+  <h1>Listing ingredients </h1>
+</div>
+<div class="alert-message block-message info center">
+  <h2><%= link_to "New ingredient", new_ingredient_path, :class => "btn info" %></h2>
+</div>
+<table class="zebra-striped">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Brand</th>
+    <th>Category</th>
+    <th>Protein</th>
+    <th>Carbs</th>
+    <th>Fat</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ingredients.each do |ingredient| %>
+  <tr>
+    <td><%= ingredient.name %></td>
+    <td><%= ingredient.description %></td>
+    <td><%= ingredient.brand %></td>
+    <td><%= ingredient.category_id %></td>
+    <td><%= ingredient.protein %></td>
+    <td><%= ingredient.carbs %></td>
+    <td><%= ingredient.fat %></td>
+    <td><%= link_to 'Show', ingredient %></td>
+    <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
+    <td><%= link_to 'Destroy', ingredient, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

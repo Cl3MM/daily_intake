@@ -1,0 +1,14 @@
+  <%= content_tag :div, :class=>"item" do %>
+    <%= link_to "Del", meal, :confirm => 'Are you sure?', :method => :delete %>
+    <%= content_tag :div, :class=>"title" do %>
+      <%=content_tag :h2, link_to(meal.name, meal) %>
+      <%= content_tag :p, meal.time.strftime("%H:%M"), :class => "" %>
+    <% end %>
+
+    <%= content_tag :p do %>
+      <span>Cal: <%= number_with_precision(meal.totalCal, :precision => 2, :separator => ',', :delimiter => ' ') %></span>
+      <span> ( <%= number_with_precision(meal.totalDetail["totalProtein"], :precision => 2, :separator => ',', :delimiter => ' ') %> |</span>
+      <span> <%= number_with_precision(meal.totalDetail["totalCarbs"], :precision => 2, :separator => ',', :delimiter => ' ') %> |</span>
+      <span> <%= number_with_precision(meal.totalDetail["totalFat"], :precision => 2, :separator => ',', :delimiter => ' ') %> )</span>
+    <% end %>
+  <% end %>

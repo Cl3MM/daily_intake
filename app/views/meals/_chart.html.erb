@@ -1,0 +1,74 @@
+<% unless @meals.empty? %>
+
+<script type="text/javascript" charset="utf-8">
+var chart1; // globally available
+$(document).ready(function() {
+      chart1 = new Highcharts.Chart({
+         chart: {
+            renderTo: 'calChart',
+         },
+         title: {
+          text: 'Daily intake <%= "#{number_with_precision(@totalDailyCal, :precision => 2, :separator => ',', :delimiter => ' ')} kcal"%>'
+         },
+           plotOptions: {
+              pie: {
+                 allowPointSelect: true,
+                 cursor: 'pointer',
+                 dataLabels: {
+                    enabled: false
+                 },
+                 showInLegend: true
+              }
+           },
+         series: [{
+          type: 'pie',
+          name: 'Browser share',
+          data: [
+          ['Fat',   <%= number_with_precision(@totalDailyFat, :precision => 2, ) %>],
+          ['Carbs', <%= number_with_precision(@totalDailyCarbs , :precision => 2) %> ],
+             {
+                name: 'Prots',
+                y: <%= number_with_precision(@totalDailyProtein, :precision => 1)%>,
+                sliced: true,
+                selected: true
+             }]
+
+         }]
+      });
+      chart2 = new Highcharts.Chart({
+         chart: {
+            renderTo: 'evolutionChart',
+         },
+         title: {
+          text: 'Daily intake <%= "#{number_with_precision(@totalDailyCal, :precision => 2, :separator => ',', :delimiter => ' ')} kcal"%>'
+         },
+         title: {
+           text: "Orders by Day"
+         },
+         xAxis: {
+          type: "datetime"
+         },
+         yAxis: {
+           title: {
+             text: "Dollars"
+           }
+         },
+         tooltip: {
+           formatter: function() {
+             return Highcharts.dateFormat("%B %e, %Y", this.x) + ': ' +
+             "$" + Highcharts.numberFormat(this.y, 2);
+           }
+         },
+         series: [{
+          name: 'Browser share',
+          pointInterval: <%= 1.day * 1000 %>,
+          pointStart: <%= 2.weeks.ago.to_i * 1000 %>,
+          data: [1, 2, 3, 4, 12 , 5, 2, 4, 11, 3, 9, 6]
+         }]
+      });
+   });
+</script>
+
+  <%= content_tag :div, "", :id=>"calChart" %>
+
+<% end %>

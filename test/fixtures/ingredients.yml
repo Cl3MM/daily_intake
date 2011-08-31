@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: 
+  description: MyString
+  brand: MyString
+  category_id: 1
+  protein: 1.5
+  carbs: 1.5
+  fat: 1.5
+
+two:
+  name: 
+  description: MyString
+  brand: MyString
+  category_id: 1
+  protein: 1.5
+  carbs: 1.5
+  fat: 1.5

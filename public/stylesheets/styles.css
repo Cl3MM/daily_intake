@@ -1,0 +1,281 @@
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+	font: 100% "Helvetica Neue", Helvetica, Arial sans-serif;
+	padding: 20px 10px;
+	width: 640px;
+	margin: 0 auto;
+}
+h1, h2, h3, h4, h5 { font-weight: bolder; }
+h1 {
+	font-size: 2em;
+	margin-bottom: 10px;
+}
+
+h2 {
+	font-size: 1.6em;
+}
+
+h3 {
+	font-size: 1.4em;
+}
+
+h4 {
+	font-size: 1.em;
+}
+
+p {
+	margin-bottom: 10px;
+}
+
+#flash {
+	position: relative;
+	z-index: 2;
+	margin: 5px 0;
+}
+
+#flash_notice {
+	background-color: #E0F8E0;
+	border: 1px solid #00cf13;
+	font-weight: bold;
+	text-align: center;
+	padding: 5px 0;
+}
+
+#flash_error,
+.validation-error {
+	background-color: #F8E0E0;
+	border: 1px solid #ff1515;
+	font-weight: bold;
+	text-align: center;
+	padding: 5px 0px;
+}
+
+ul {
+	list-style-type: disc;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+li {
+	margin: 10px 0;
+}
+
+.button_to {
+	display: inline-block
+}
+
+#completed li { opacity: 0.6; }
+
+#food p a { vertical-align: middle; }
+#food p a img {vertical-align: bottom;}
+
+#meal, form { display: table; width: 100%; }
+#meal p, form p { display: table-row; }
+#meal p span, form p input { display: table-cell;  }
+#meal p span, form p label { display: table-cell; width: 30%; }
+#meal p a.name { display: table-cell; width: 16em; padding-left: 0.6em; }
+#meal p a.button_img { width: 20px; }
+
+#totalCal { border-top: 1px solid #000; font-weight: bolder; width: 460px; text-align:right; margin-top: 1em;}
+
+#mealsHeader { 
+  display: inline;
+}
+
+#mealsHeader { margin-bottom: 0px; } 
+
+#mealsHeader p.c1, #mealsHeader p.c2, #mealsHeader p.c3 {
+  float: right;
+  width: 100px;
+  text-align: right;
+  margin: 0;
+}
+
+#mealsHeader p.c1 { width: 110px; }
+#mealsHeader p.c2 { width: 25px; }
+#mealsHeader p.c3 { width: 150px; }
+
+#mealsHeader p.verte {
+  width: 100%;
+  border-bottom: 1px solid #999;
+  padding-bottom: 0.4em;
+}
+#mealsHeader p.spacer { clear: both; }
+
+#container h2 { width: 300px; }
+#calChart { width: 290px; height: 220px; }
+.buttonDate {width: 280px !important;}
+.calChart {width: 280px !important; margin-left:0px; height:230px !important;}
+.evol {width: 630px !important; }
+
+.mealIndexHeaderTime { vertical-align: text-bottom; margin:0px;margin-top: 3px; padding: 5px; padding-left: 15px; border-left: 1px solid #999;}
+.mealIndexDivTitle { width: 300px; border-bottom: 1px solid #999; margin-bottom: 0.4em; padding-bottom: 0.4em; }
+
+.boxSmallFloatRight { float: right; }
+.boxBigContain { width: 100%; }
+.spacer { clear: both; }
+
+form { padding: 0em 0em;}
+form p { height: 2.6em; }
+form p.button { text-align: right; }
+form p.button button { margin-top: 1em; }
+
+form table { margin: 2em 0em; margin-top: 4em; }
+
+textarea, input { border: 1px solid #999; font-size: 0.8em; }
+input.textfield {width: 15em;}
+input.button  { padding: 0em 0.5em; margin: 0.6em 0em;}
+
+.item {
+  width: 300px;
+  margin: 10px;
+  float: left;
+}
+.hasDatepicker {
+  width: 320px;
+}
+body {
+    background-color: #86c6d7;
+    text-align: left;
+    padding: 20px;
+}
+#main-nav {
+    width: 800px;
+    height: 50px;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+
+#main-nav .main-nav-item {
+    display: inline;
+}
+
+#main-nav .main-nav-tab {
+    float: left;
+    width: 140px;
+    height: 30px;
+    padding: 10px;
+    line-height: 30px;
+    text-align: center;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#main-nav .main-nav-item-active .main-nav-tab {
+    background-color: #FFF;
+    color: #f60;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#main-nav .main-nav-dd {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF;
+    border-bottom: 4px solid #f60;
+    display: none;
+}
+
+#main-nav .main-nav-item-active .main-nav-dd {
+    display: block;
+    z-index:1000;
+}
+
+#main-nav .main-nav-dd-column {
+    width: 130px;
+    padding: 15px 20px 8px;
+    display: table-cell;
+    border-left: 1px solid #ddd;
+    *float: left;
+    *border-left: 0;
+}
+
+#main-nav .main-nav-dd-column:first-child {
+    border-left: 0;
+}
+
+#main-nav .main-nav-dd h3 {
+    font-size: 14px;
+    color: #86c6d7;
+}
+
+#main-nav .main-nav-dd a {
+    color: #777;
+    text-decoration: none;
+}
+
+#main-nav .main-nav-dd a:hover {
+    color: #86c6d7;
+    text-decoration: underline;
+}
+
+#main-nav .main-nav-dd ul {
+    list-style: none;
+    padding: 0;
+}
+
+#main-nav .main-nav-dd hr {
+    border: 1px dotted #ddd;
+}

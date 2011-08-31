@@ -1,0 +1,7 @@
+$("h1").html("Listing meals on <%=raw escape_javascript(@date.strftime("%B %e, %Y")) %>");
+<% if @meals.empty? %>
+  $("#meals_list").html("<%= raw escape_javascript(render :partial=>"no_meal") %>");
+<% else  %>
+  $("#meals_list").html("<%= raw escape_javascript(render(@meals)) %>");
+<%  end  %>
+$("#chart").html("<%= raw escape_javascript(render :partial => "chart") %>");

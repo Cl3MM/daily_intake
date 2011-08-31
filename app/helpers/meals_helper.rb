@@ -1,0 +1,3 @@
+module MealsHelper
+
+end
